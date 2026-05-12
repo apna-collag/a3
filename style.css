@@ -6,17 +6,22 @@
 }
 html,body
 {
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
+  font-family:Helvetica;
   background-color: #000;
   color: #fff;
+  overflow-x: hidden;
   background: linear-gradient(
-135deg,
+280deg,
 #14001f 0%,
 #3b0a45 35%,
 #7a0d3d 70%,
 #120018 100%
 );
+background-repeat: no-repeat;
+background-size: cover;
+background-attachment: fixed;
 }
 nav
 {
@@ -25,7 +30,14 @@ nav
   justify-content:space-between;
   height: 100px;
   padding: 30px;
+  
 }
+nav h5
+{
+  font-size:16px;
+  font-weight: 400;
+}
+
 .part-1 img
 {
   width: 130px;
@@ -37,14 +49,26 @@ nav
   align-items: center;
   width: 400px;
 }
+.part-2 h5:nth-child(2){
+  padding: 2px;
+  text-decoration: underline;
+  text-decoration-color:rgb(189, 13, 98);
+    text-underline-offset: 6px;
+
+}
 .part-3 i
 {
   font-size: 30px;
 }
-section
+.hero
 {
   display: flex;
   padding: 50px;
+}
+.section
+{
+  z-index: 1;
+  position: relative;
 }
 section .hero-1
 {
@@ -62,12 +86,16 @@ section .hero-2
 {
   display: flex;
   flex-direction: column;
-  gap:30px;
-  padding: 30px;
+  gap:40px;
+  padding: 10px;
+}
+.hero-1 p
+{
+  font-size: 13px;
 }
 .hero-1 img
 {
-  width: 300px;
+  width: 400px;
   
 }
 .buttons
@@ -78,19 +106,27 @@ section .hero-2
 .btn-1
 {
   display: flex;
+  align-items: center;
   gap: 5px;
-  padding: 10px 30px;
+  padding: 15px 35px;
   border-radius: 10px;
-  border:none
+  border:none;
+  background: linear-gradient(to right, #b21c4d, #d1463a, #e67e22);
+  color: #fff;
 }
 .btn-2
 {
   display: flex;
+  align-items: center;
   gap: 5px;
-  padding: 10px 30px;
+  padding: 15px 35px;
   border-radius: 10px;
-  border:none
+  border: 2px solid rgb(189, 13, 98);
+  color: #fff;
+  background-color: transparent;
+
 }
+
 .hero-2
 {
   display: flex;
@@ -106,16 +142,20 @@ section .hero-2
 {
   height:1px;
   width: 36px;
-  background-color: #fff;
+  background-color:rgb(189, 13, 98);
 }
 .extra-part-1
 {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 10px;
   position: absolute;
   transform: rotate(270deg);
   left:90px;
+}
+.extra-part-1 p
+{
+  font-size: 14px;
 }
 .extra-part-2
 {
@@ -126,17 +166,39 @@ section .hero-2
 svg
 {
   width:20px;
-  fill: #fff;
+  fill: rgb(189, 13, 98);
+}
+.layer-2 h1
+{
+  z-index: 2;
+  font-size: 150px;
+  position: relative;
+}
+.layer-2 .squid
+{
+  position: absolute;
+  transform: rotate(270deg);
+  top: 40%;
+  right:-15%;
+  opacity: 0.2;
+}
+.layer-2 .game
+{
+  position: absolute;
+  top: 65%;
+  left:28%;
+  opacity: 0.2;
 }
 .cards
 {
   width:100%;
+  height: calc(100vh-100px-450px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
   position: relative;
- 
+ z-index: 3;
 }
 .card
 {
@@ -162,4 +224,8 @@ svg
   position: absolute;
   right:2%;
   bottom: 15%;
+}
+.buttons i
+{
+  font-size:20px;
 }
